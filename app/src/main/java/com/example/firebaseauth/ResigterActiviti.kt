@@ -6,19 +6,18 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.firebaseauth.databinding.ActivityMainBinding
+import com.example.firebaseauth.databinding.ActivityResigterBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class ResigterActiviti : AppCompatActivity() {
+    private lateinit var binding: ActivityResigterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityResigterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        binding.registerText.setOnClickListener {
-           val intent = Intent(this, ResigterActiviti::class.java)
+        binding.signIn.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 

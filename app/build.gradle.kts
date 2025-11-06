@@ -6,9 +6,16 @@ plugins {
 
 android {
     namespace = "com.example.firebaseauth"
+
+    buildFeatures{
+        viewBinding = true
+    }
+
     compileSdk {
         version = release(36)
     }
+
+
 
     defaultConfig {
         applicationId = "com.example.firebaseauth"
