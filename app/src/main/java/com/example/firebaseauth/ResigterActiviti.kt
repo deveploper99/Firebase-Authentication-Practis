@@ -45,9 +45,9 @@ class ResigterActiviti : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(email,passW)
                 .addOnCompleteListener{ task ->
                     if (task.isSuccessful){
-                        Toast.makeText(this,"Registration is Successful", Toast.LENGTH_SHORT)
+                        Toast.makeText(this,"Registration is Successful", Toast.LENGTH_SHORT).show()
                     }else{
-                        Toast.makeText(this,"Registration is Not Successfull", Toast.LENGTH_SHORT)
+                        Toast.makeText(this,"Registration is Not Successfull", Toast.LENGTH_SHORT).show()
                     }
 
                     startActivity(Intent(this, MainActivity::class.java))
@@ -61,5 +61,14 @@ class ResigterActiviti : AppCompatActivity() {
 
         }
 
+    }
+
+    override fun onStart(){
+        super.onStart()
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser!=null){
+            startActivity(Intent(this, DeshBoardActivity::class.java))
+            finish()
+        }
     }
 }

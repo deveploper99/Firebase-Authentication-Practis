@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseAuth">
         <activity
+            android:name=".DeshBoardActivity"
+            android:exported="false" />
+        <activity
             android:name=".ResigterActiviti"
             android:exported="false" />
         <activity
